@@ -1,42 +1,19 @@
-# sv
+What should [Smolblog](https://smolblog.com/) be in 2026?
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+## License
 
-## Creating a project
+Smolblog Prototype  
+Copyright (C) 2026 Evan Hildreth
 
-If you're seeing this, you've probably already done this step. Congrats!
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as
+published by the Free Software Foundation, either version 3 of the
+License, or (at your option) any later version.
 
-```sh
-# create a new project
-npx sv create my-app
-```
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Affero General Public License for more details.
 
-To recreate this project with the same configuration:
-
-```sh
-# recreate this project
-bun x sv@0.15.3 create --template minimal --types ts --add tailwindcss="plugins:typography,forms" --install bun ./
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```sh
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```sh
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+You should have received a copy of the GNU Affero General Public License
+along with this program.  If not, see <https://www.gnu.org/licenses/>.
