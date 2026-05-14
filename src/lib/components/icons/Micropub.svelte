@@ -1,0 +1,9 @@
+<script lang="ts">
+	let { class: extraClasses }: {class?: string} = $props();
+</script>
+
+<svg class={extraClasses} role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192">
+  <title>Micropub</title>
+  <path fill="currentColor" fill-rule="evenodd"
+    d="M126 16a54 54 0 0 1 6 107.7V80.4a12 12 0 1 0-12 0V172a4 4 0 0 1-4 4H72V80.4a12 12 0 1 0-12 0V176H16a4 4 0 0 1-4-4V70a54 54 0 0 1 84-45 54 54 0 0 1 30-9Z" />
+</svg>
