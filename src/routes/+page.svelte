@@ -7,6 +7,10 @@
   import ChevronRight from "@lucide/svelte/icons/chevron-right";
   import Micropub from "$lib/components/icons/Micropub.svelte";
   import Bluesky from "$lib/components/icons/Bluesky.svelte";
+  import ScrollArea from "$lib/components/ui/scroll-area/scroll-area.svelte";
+  import Tumblr from "$lib/components/icons/Tumblr.svelte";
+  import MicroDotBlog from "$lib/components/icons/MicroDotBlog.svelte";
+  import WordPress from "$lib/components/icons/WordPress.svelte";
 </script>
 
 <Card.Root class="w-full max-w-sm">
@@ -17,6 +21,7 @@
     >
   </Card.Header>
 	<Card.Content>
+		<ScrollArea class="w-full h-64">
 		<div class="w-full flex flex-col gap-4">
 			<Item.Root variant="outline">
 				{#snippet child({ props })}
@@ -41,6 +46,51 @@
 						</Item.Media>
 						<Item.Content>
 							<Item.Title>Mastodon</Item.Title>
+						</Item.Content>
+						<Item.Actions>
+							<ChevronRight class="size-4" />
+						</Item.Actions>
+					</a>
+				{/snippet}
+			</Item.Root>
+			<Item.Root variant="outline">
+				{#snippet child({ props })}
+					<a href="#/" {...props}>
+						<Item.Media>
+							<Tumblr class="size-6" />
+						</Item.Media>
+						<Item.Content>
+							<Item.Title>Tumblr</Item.Title>
+						</Item.Content>
+						<Item.Actions>
+							<ChevronRight class="size-4" />
+						</Item.Actions>
+					</a>
+				{/snippet}
+			</Item.Root>
+			<Item.Root variant="outline">
+				{#snippet child({ props })}
+					<a href="#/" {...props}>
+						<Item.Media>
+							<WordPress class="size-6" />
+						</Item.Media>
+						<Item.Content>
+							<Item.Title>WordPress</Item.Title>
+						</Item.Content>
+						<Item.Actions>
+							<ChevronRight class="size-4" />
+						</Item.Actions>
+					</a>
+				{/snippet}
+			</Item.Root>
+			<Item.Root variant="outline">
+				{#snippet child({ props })}
+					<a href="#/" {...props}>
+						<Item.Media>
+							<MicroDotBlog class="size-6" />
+						</Item.Media>
+						<Item.Content>
+							<Item.Title>Micro.blog</Item.Title>
 						</Item.Content>
 						<Item.Actions>
 							<ChevronRight class="size-4" />
@@ -85,6 +135,7 @@
 				{/snippet}
 			</Item.Root>
 		</div>
+		</ScrollArea>
 	</Card.Content>
 	<Card.Footer>
 		<Button variant="link" class="w-full">I can't / don't want to.</Button>

@@ -23,6 +23,7 @@
 		"@tailwindcss/vite": "^4.2.2",
 		"bits-ui": "^2.16.3",
 		"clsx": "^2.1.1",
+		"paneforge": "^1.0.2",
 		"shadcn-svelte": "^1.2.7",
 		"svelte": "^5.55.2",
 		"svelte-check": "^4.4.6",
@@ -34,6 +35,9 @@
 		"vite": "^8.0.7"
 	},
 	"dependencies": {
-		"mode-watcher": "^1.1.0"
+		"@codemirror/lang-html": "^6.4.11",
+		"mode-watcher": "^1.1.0",
+		"svelte-codemirror-editor": "^2.1.0",
+		"wontache": "^0.2.0"
 	}
 }
