@@ -25,7 +25,7 @@
 		<div class="w-full flex flex-col gap-4">
 			<Item.Root variant="outline">
 				{#snippet child({ props })}
-					<a href="#/" {...props}>
+					<a href="/" {...props}>
 						<Item.Media>
 							<Bluesky class="size-6" />
 						</Item.Media>
@@ -40,7 +40,7 @@
 			</Item.Root>
 			<Item.Root variant="outline">
 				{#snippet child({ props })}
-					<a href="#/" {...props}>
+					<a href="/" {...props}>
 						<Item.Media>
 							<Mastodon class="size-6" />
 						</Item.Media>
@@ -55,7 +55,7 @@
 			</Item.Root>
 			<Item.Root variant="outline">
 				{#snippet child({ props })}
-					<a href="#/" {...props}>
+					<a href="/" {...props}>
 						<Item.Media>
 							<Tumblr class="size-6" />
 						</Item.Media>
@@ -70,7 +70,7 @@
 			</Item.Root>
 			<Item.Root variant="outline">
 				{#snippet child({ props })}
-					<a href="#/" {...props}>
+					<a href="/" {...props}>
 						<Item.Media>
 							<WordPress class="size-6" />
 						</Item.Media>
@@ -85,7 +85,7 @@
 			</Item.Root>
 			<Item.Root variant="outline">
 				{#snippet child({ props })}
-					<a href="#/" {...props}>
+					<a href="/" {...props}>
 						<Item.Media>
 							<MicroDotBlog class="size-6" />
 						</Item.Media>
@@ -100,7 +100,7 @@
 			</Item.Root>
 			<Item.Root variant="outline">
 				{#snippet child({ props })}
-					<a href="#/" {...props}>
+					<a href="/" {...props}>
 						<Item.Media>
 							<Atmosphere class="size-6" />
 						</Item.Media>
@@ -118,7 +118,7 @@
 			</Item.Root>
 			<Item.Root variant="outline">
 				{#snippet child({ props })}
-					<a href="#/" {...props}>
+					<a href="/" {...props}>
 						<Item.Media>
 							<Micropub class="size-6" />
 						</Item.Media>
