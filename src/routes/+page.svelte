@@ -11,6 +11,8 @@
   import Tumblr from "$lib/components/icons/Tumblr.svelte";
   import MicroDotBlog from "$lib/components/icons/MicroDotBlog.svelte";
   import WordPress from "$lib/components/icons/WordPress.svelte";
+
+	import { resolve } from "$app/paths";
 </script>
 
 <Card.Root class="w-full max-w-sm">
@@ -25,7 +27,7 @@
 		<div class="w-full flex flex-col gap-4">
 			<Item.Root variant="outline">
 				{#snippet child({ props })}
-					<a href="/" {...props}>
+					<a href={resolve("/")} {...props}>
 						<Item.Media>
 							<Bluesky class="size-6" />
 						</Item.Media>
@@ -40,7 +42,7 @@
 			</Item.Root>
 			<Item.Root variant="outline">
 				{#snippet child({ props })}
-					<a href="/" {...props}>
+					<a href={resolve("/")} {...props}>
 						<Item.Media>
 							<Mastodon class="size-6" />
 						</Item.Media>
@@ -55,7 +57,7 @@
 			</Item.Root>
 			<Item.Root variant="outline">
 				{#snippet child({ props })}
-					<a href="/" {...props}>
+					<a href={resolve("/")} {...props}>
 						<Item.Media>
 							<Tumblr class="size-6" />
 						</Item.Media>
@@ -70,7 +72,7 @@
 			</Item.Root>
 			<Item.Root variant="outline">
 				{#snippet child({ props })}
-					<a href="/" {...props}>
+					<a href={resolve("/")} {...props}>
 						<Item.Media>
 							<WordPress class="size-6" />
 						</Item.Media>
@@ -85,7 +87,7 @@
 			</Item.Root>
 			<Item.Root variant="outline">
 				{#snippet child({ props })}
-					<a href="/" {...props}>
+					<a href={resolve("/")} {...props}>
 						<Item.Media>
 							<MicroDotBlog class="size-6" />
 						</Item.Media>
@@ -100,7 +102,7 @@
 			</Item.Root>
 			<Item.Root variant="outline">
 				{#snippet child({ props })}
-					<a href="/" {...props}>
+					<a href={resolve("/")} {...props}>
 						<Item.Media>
 							<Atmosphere class="size-6" />
 						</Item.Media>
@@ -118,7 +120,7 @@
 			</Item.Root>
 			<Item.Root variant="outline">
 				{#snippet child({ props })}
-					<a href="/" {...props}>
+					<a href={resolve("/")} {...props}>
 						<Item.Media>
 							<Micropub class="size-6" />
 						</Item.Media>

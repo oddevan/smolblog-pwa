@@ -3,6 +3,7 @@
 	import favicon from '$lib/assets/favicon.svg';
   import { ModeWatcher, resetMode, setMode, userPrefersMode } from 'mode-watcher';
   import * as Menubar from '$lib/components/ui/menubar';
+  import { resolve } from '$app/paths';
 
 	let { children } = $props();
 </script>
@@ -14,8 +15,8 @@
 	<Menubar.Menu>
 		<Menubar.Trigger>Navigation</Menubar.Trigger>
 		<Menubar.Content>
-			<Menubar.Item><a href="/">Onboarding</a></Menubar.Item>
-			<Menubar.Item><a href="/theme">Theme Editor</a></Menubar.Item>
+			<Menubar.Item><a href={resolve("/")}>Onboarding</a></Menubar.Item>
+			<Menubar.Item><a href={resolve("/theme")}>Theme Editor</a></Menubar.Item>
 		</Menubar.Content>
 	</Menubar.Menu>
 	<Menubar.Menu>
