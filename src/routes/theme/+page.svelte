@@ -1,21 +1,22 @@
 <script lang="ts">
-	import CodeMirror from "svelte-codemirror-editor"
-	import { html } from "@codemirror/lang-html"
-	import * as Resizable from "$lib/components/ui/resizable/index.js";
-	import * as Field from "$lib/components/ui/field/index.js";
+  import CodeMirror from "svelte-codemirror-editor";
+  import { html } from "@codemirror/lang-html";
+  import * as Resizable from "$lib/components/ui/resizable/index.js";
+  import * as Field from "$lib/components/ui/field/index.js";
   import { Input } from "$lib/components/ui/input";
   import Textarea from "$lib/components/ui/textarea/textarea.svelte";
-	import mustache from 'wontache';
+  import mustache from "wontache";
   import ScrollArea from "$lib/components/ui/scroll-area/scroll-area.svelte";
+  import { resolve } from "$app/paths";
 
-	const baseTemplate = `<!DOCTYPE html>
+  const baseTemplate = `<!DOCTYPE html>
 <html>
 
 <head>
 	<title>Theme Preview</title>
 	<style type="text/css">
 		body {
-			background: url(/theme_assets/bodyback.jpg) #fff repeat-y fixed;
+			background: url(${resolve("/")}theme_assets/bodyback.jpg) #fff repeat-y fixed;
 			color: #444;
 			font-family: "helvetica neue", verdana, sans-serif;
 			margin: 0;
@@ -25,7 +26,7 @@
 			margin: 0;
 			padding: 0;
 			min-height: 100vh;
-			background: url(/theme_assets/sideback.png) repeat-y;
+			background: url(${resolve("/")}theme_assets/sideback.png) repeat-y;
 		}
 
 		h1 {
@@ -228,79 +229,89 @@
 
 </html>`;
 
-	let template = $state(baseTemplate);
-	let data = $state({
-		site: {
-			name: 'A Smol Blog',
-			author: 'Smol Snek',
-			socials: [
-				{
-					url: 'https://bsky.app/smolblog.com/',
-					title: 'Bluesky',
-				},
-				{
-					url: 'https://mastodon.social/@oddevan/',
-					title: 'Mastodon',
-				},
-			]
-		},
-		post: {
-			title: 'A Smol Post',
-			content: '<p>Fully-formed <em>marked</em>-up language</p>',
-		},
-	})
+  let template = $state(baseTemplate);
+  let data = $state({
+    site: {
+      name: "A Smol Blog",
+      author: "Smol Snek",
+      socials: [
+        {
+          url: "https://bsky.app/smolblog.com/",
+          title: "Bluesky",
+        },
+        {
+          url: "https://mastodon.social/@oddevan/",
+          title: "Mastodon",
+        },
+      ],
+    },
+    post: {
+      title: "A Smol Post",
+      content: "<p>Fully-formed <em>marked</em>-up language</p>",
+    },
+  });
 
-	let previewHtml = $derived(mustache(template)(data));
+  let previewHtml = $derived(mustache(template)(data));
 </script>
 
 <style>
-
 </style>
- 
+
 <div class="w-full h-dvh">
-<Resizable.PaneGroup direction="horizontal">
- <Resizable.Pane defaultSize={50}>
-  <Resizable.PaneGroup direction="vertical">
-   <Resizable.Pane defaultSize={25}>
-		<ScrollArea class="w-full h-full">
-    <Field.Set class="p-4">
-			<Field.Legend class="pt-4">Sample Data</Field.Legend>
-			<Field.Description>This will populate the template preview.</Field.Description>
-			<Field.Group>
-				<Field.Field>
-					<Field.Label for="site-title">Site Title</Field.Label>
-					<Input id="site-title" autocomplete="off" bind:value={data.site.name} />
-				</Field.Field>
-				<Field.Field>
-					<Field.Label for="site-author">Site Author</Field.Label>
-					<Input id="site-author" autocomplete="off" bind:value={data.site.author} />
-				</Field.Field>
-			</Field.Group>
-			<Field.Group>
-				<Field.Field>
-					<Field.Label for="post-title">Post Title</Field.Label>
-					<Input id="post-title" autocomplete="off" bind:value={data.post.title} />
-				</Field.Field>
-				<Field.Field>
-					<Field.Label for="post-content">Post Content</Field.Label>
-					<Textarea id="post-content" bind:value={data.post.content} />
-					<Field.Description>Use full HTML</Field.Description>
-				</Field.Field>
-			</Field.Group>
-		</Field.Set>
-		</ScrollArea>
-   </Resizable.Pane>
-   <Resizable.Handle withHandle />
-   <Resizable.Pane defaultSize={75}>
-		<ScrollArea class="w-full h-full">
-		<CodeMirror class="w-full h-full" lang={html()} bind:value={template}></CodeMirror>
-		</ScrollArea>
-   </Resizable.Pane>
+  <Resizable.PaneGroup direction="horizontal">
+    <Resizable.Pane defaultSize={50}>
+      <ScrollArea class="w-full h-full">
+        <Field.Set class="p-4">
+          <Field.Legend class="pt-4">Sample Data</Field.Legend>
+          <Field.Description
+            >This will populate the template preview.</Field.Description
+          >
+          <Field.Group>
+            <Field.Field>
+              <Field.Label for="site-title">Site Title</Field.Label>
+              <Input
+                id="site-title"
+                autocomplete="off"
+                bind:value={data.site.name}
+              />
+            </Field.Field>
+            <Field.Field>
+              <Field.Label for="site-author">Site Author</Field.Label>
+              <Input
+                id="site-author"
+                autocomplete="off"
+                bind:value={data.site.author}
+              />
+            </Field.Field>
+          </Field.Group>
+          <Field.Group>
+            <Field.Field>
+              <Field.Label for="post-title">Post Title</Field.Label>
+              <Input
+                id="post-title"
+                autocomplete="off"
+                bind:value={data.post.title}
+              />
+            </Field.Field>
+            <Field.Field>
+              <Field.Label for="post-content">Post Content</Field.Label>
+              <Textarea id="post-content" bind:value={data.post.content} />
+              <Field.Description>Use full HTML</Field.Description>
+            </Field.Field>
+          </Field.Group>
+        </Field.Set>
+        <CodeMirror class="w-full h-full" lang={html()} bind:value={template}
+        ></CodeMirror>
+      </ScrollArea>
+    </Resizable.Pane>
+    <Resizable.Handle withHandle />
+    <Resizable.Pane defaultSize={50}>
+      <iframe
+        class="w-full h-full"
+        sandbox=""
+        srcdoc={previewHtml}
+        title="Theme Preview"
+      ></iframe>
+    </Resizable.Pane>
   </Resizable.PaneGroup>
- </Resizable.Pane>
- <Resizable.Handle withHandle />
- <Resizable.Pane defaultSize={50}>
-	<iframe class="w-full h-full" sandbox="" srcdoc={previewHtml} title="Theme Preview"></iframe>
- </Resizable.Pane>
-</Resizable.PaneGroup>
 </div>
