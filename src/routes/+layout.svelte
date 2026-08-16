@@ -15,7 +15,7 @@
 	<Menubar.Menu>
 		<Menubar.Trigger>Navigation</Menubar.Trigger>
 		<Menubar.Content>
-			<Menubar.Item><a href={resolve("/")}>Onboarding</a></Menubar.Item>
+			<Menubar.Item><a href={resolve("/account-list")}>Onboarding v1</a></Menubar.Item>
 			<Menubar.Item><a href={resolve("/theme")}>Theme Editor</a></Menubar.Item>
 		</Menubar.Content>
 	</Menubar.Menu>
