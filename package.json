@@ -41,7 +41,7 @@
 		"shadcn-svelte": "^1.5.0",
 		"svelte": "^5.56.7",
 		"svelte-check": "^4.6.0",
-		"sveltekit-superforms": "^2.30.0",
+		"sveltekit-superforms": "^2.30.2",
 		"tailwind-merge": "^3.6.0",
 		"tailwind-variants": "^3.3.1",
 		"tailwindcss": "^4.3.0",
@@ -49,7 +49,8 @@
 		"typescript": "^6.0.3",
 		"typescript-eslint": "^8.60.1",
 		"vite": "^8.1.5",
-		"vitest": "^4.1.8"
+		"vitest": "^4.1.8",
+		"zod": "^4.4.3"
 	},
 	"imports": {
 		"#lib": "./src/lib/index.js",
